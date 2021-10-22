@@ -10,12 +10,18 @@ public class Coin : MonoBehaviour
     //コインを回転させる
     void Update()
     {
-        transform.Rotate(0, 0, 05f);
+        transform.Rotate(0, 0, 5f);
     }
 
     //衝突したらパーティクルを再生する
     private void OnTriggerEnter(Collider other)
     {
+        //スコアを追加する
+        GameObject scoreTextGo = GameObject.Find("ScoreText");
+
+        //メッセージを送信する
+        scoreTextGo.SendMessage("OnScore", 1);
+
         //パーティクルを再生する
         particle.Play();
 
