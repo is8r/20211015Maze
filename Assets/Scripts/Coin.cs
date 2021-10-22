@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goal : MonoBehaviour
+public class Coin : MonoBehaviour
 {
     //パーティクルを登録する
     public ParticleSystem particle;
+
+    //コインを回転させる
+    void Update()
+    {
+        transform.Rotate(0, 0, 05f);
+    }
 
     //衝突したらパーティクルを再生する
     private void OnTriggerEnter(Collider other)
