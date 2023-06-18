@@ -7,9 +7,15 @@ public class Goal : MonoBehaviour
     //パーティクルを登録する
     public ParticleSystem particle;
 
+    //クリアパネルを登録する
+    public GameObject clearCanvas;
+
     //衝突したらパーティクルを再生する
     private void OnTriggerEnter(Collider other)
     {
+        //クリアパネルを開く
+        clearCanvas.SendMessage("OnEnter");
+
         //パーティクルを再生する
         particle.Play();
 

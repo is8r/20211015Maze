@@ -19,5 +19,9 @@ public class Score : MonoBehaviour
 
         //scoreをテキストエリアに表示させる
         scoreText.text = score.ToString();
+
+        //PlayerPrefsに値を追加する
+        PlayerPrefs.SetInt("score", score);
+        PlayerPrefs.Save();
     }
 }
